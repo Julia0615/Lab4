@@ -4,6 +4,8 @@
  */
 package ui4;
 
+import java.awt.CardLayout;
+
 /**
  *
  * @author bahatizhuliduosi
@@ -34,8 +36,9 @@ public class MainFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        SplitPane.setDividerLocation(150);
+        SplitPane.setDividerLocation(100);
         SplitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
+        SplitPane.setPreferredSize(new java.awt.Dimension(700, 200));
 
         topPanel.setPreferredSize(new java.awt.Dimension(700, 25));
 
@@ -78,7 +81,7 @@ public class MainFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(SplitPane)
+            .addComponent(SplitPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -94,7 +97,9 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
        
         FormPanel newFormPanel = new FormPanel();
-        SplitPane.setBottomComponent(newFormPanel);
+        bottomPanel.add(newFormPanel);
+        CardLayout layout = (CardLayout) bottomPanel.getLayout();
+        layout.next(bottomPanel);
     }//GEN-LAST:event_fromButtonActionPerformed
 
     /**

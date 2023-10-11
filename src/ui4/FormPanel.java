@@ -28,6 +28,7 @@ public class FormPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        GenderGroup = new javax.swing.ButtonGroup();
         mainPanel = new javax.swing.JPanel();
         titleLabel = new javax.swing.JLabel();
         FirstNameLabel = new javax.swing.JLabel();
@@ -42,6 +43,10 @@ public class FormPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         MessageTextArea = new javax.swing.JTextArea();
         SubmitButton = new javax.swing.JButton();
+        GenderLabel = new javax.swing.JLabel();
+        MaleRadio = new javax.swing.JRadioButton();
+        FemaleRadio = new javax.swing.JRadioButton();
+        NotMentionedRadio = new javax.swing.JRadioButton();
 
         setPreferredSize(new java.awt.Dimension(700, 443));
 
@@ -79,22 +84,39 @@ public class FormPanel extends javax.swing.JPanel {
             }
         });
 
+        GenderLabel.setText("Gender");
+
+        GenderGroup.add(MaleRadio);
+        MaleRadio.setText("Male");
+        MaleRadio.setActionCommand("MALE USER");
+        MaleRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MaleRadioActionPerformed(evt);
+            }
+        });
+
+        GenderGroup.add(FemaleRadio);
+        FemaleRadio.setText("Female");
+        FemaleRadio.setActionCommand("FEMALE USER");
+
+        GenderGroup.add(NotMentionedRadio);
+        NotMentionedRadio.setText("Prefer not to say");
+        NotMentionedRadio.setActionCommand("NOT SPECIFIED");
+
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, mainPanelLayout.createSequentialGroup()
+            .addGroup(mainPanelLayout.createSequentialGroup()
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
                         .addGap(86, 86, 86)
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(LastNameLabel)
                             .addComponent(FirstNameLabel)
                             .addComponent(AgeLabel, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(EmailLabel, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(EmailLabel, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(GenderLabel, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(18, 18, 18)
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(mainPanelLayout.createSequentialGroup()
@@ -103,43 +125,59 @@ public class FormPanel extends javax.swing.JPanel {
                                     .addComponent(AgeTextField)
                                     .addComponent(LastNameTextField)
                                     .addComponent(EmailTextField))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
                                 .addComponent(MessageLabel))
                             .addGroup(mainPanelLayout.createSequentialGroup()
-                                .addComponent(SubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(FemaleRadio)
+                                    .addComponent(MaleRadio)
+                                    .addComponent(NotMentionedRadio)
+                                    .addComponent(SubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addGap(220, 220, 220)
+                        .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainPanelLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
                 .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(FirstNameLabel)
+                    .addComponent(FirstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(FirstNameLabel)
-                            .addComponent(FirstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(MessageLabel))
-                        .addGap(18, 18, 18)
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LastNameLabel)
+                            .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(MessageLabel)
+                                .addComponent(LastNameLabel))
                             .addComponent(LastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                        .addGap(20, 20, 20)
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(AgeLabel)
                             .addComponent(AgeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(32, 32, 32)
+                        .addGap(24, 24, 24)
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(EmailLabel)
                             .addComponent(EmailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(24, 24, 24)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(GenderLabel)
+                    .addComponent(MaleRadio))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(FemaleRadio)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(NotMentionedRadio)
+                .addGap(49, 49, 49)
                 .addComponent(SubmitButton)
-                .addGap(50, 50, 50))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -189,18 +227,27 @@ public class FormPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_SubmitButtonActionPerformed
 
+    private void MaleRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MaleRadioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MaleRadioActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AgeLabel;
     private javax.swing.JTextField AgeTextField;
     private javax.swing.JLabel EmailLabel;
     private javax.swing.JTextField EmailTextField;
+    private javax.swing.JRadioButton FemaleRadio;
     private javax.swing.JLabel FirstNameLabel;
     private javax.swing.JTextField FirstNameTextField;
+    private javax.swing.ButtonGroup GenderGroup;
+    private javax.swing.JLabel GenderLabel;
     private javax.swing.JLabel LastNameLabel;
     private javax.swing.JTextField LastNameTextField;
+    private javax.swing.JRadioButton MaleRadio;
     private javax.swing.JLabel MessageLabel;
     private javax.swing.JTextArea MessageTextArea;
+    private javax.swing.JRadioButton NotMentionedRadio;
     private javax.swing.JButton SubmitButton;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel mainPanel;
